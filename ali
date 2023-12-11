@@ -1,7 +1,1 @@
-git clone http://github.com/AbirKaldi/sample-app
-
-docker pull jenkins/jenkins:lts
-
-docker run --rm -u root -p 8080:8080 -v jenkins-data:/var/jenkins_home -v $(which docker):/usr/bin/docker -v /var/run/docker.sock:/var/run/docker.sock -v "$HOME":/home --name jenkins_server jenkins/jenkins:lts
-
-http://localhost:8080/
+https://chat.openai.com/share/3efa2072-e9b1-4d30-973b-f9df2f9ad7b0
