@@ -1,27 +1,7 @@
-version: '3'
- services:
- web:
- image: python:3.8-slim
- command: python app.py
- volumes:
+git clone http://github.com/AbirKaldi/sample-app
 
- - ./app:/app
- ports:
- - 5000:5000
- db:
- image: mysql:5.7
- environment:
- MYSQL_ROOT_PASSWORD: my-secret-pw
- MYSQL_DATABASE: mydb
- MYSQL_USER: myuser
- MYSQL_PASSWORD: mypassword
+docker pull jenkins/jenkins:lts
 
+docker run --rm -u root -p 8080:8080 -v jenkins-data:/var/jenkins_home -v $(which docker):/usr/bin/docker -v /var/run/docker.sock:/var/run/docker.sock -v "$HOME":/home --name jenkins_server jenkins/jenkins:lts
 
-from flask import Flask
- import mysql.connector
- app = Flask(__name__)
- @app.route('/')
- def hello():
- return 'Hello, World!'
- if __name__ == '__main__':
- app.run(host='0.0.0.0')
+http://localhost:8080/
